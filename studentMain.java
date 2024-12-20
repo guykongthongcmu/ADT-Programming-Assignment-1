@@ -21,7 +21,7 @@ public class studentMain {
             String dataLine = readFile.nextLine();
             StringTokenizer studentToken = new StringTokenizer(dataLine.trim(), ",");
             studentToken.nextToken();
-            studentInfo.addElement(new studentClass(studentToken.nextToken(), studentToken.nextToken(), studentToken.nextToken()));
+            studentInfo.addElement(new studentClass(studentToken.nextToken().trim(), studentToken.nextToken().trim(), studentToken.nextToken().trim()));
         }
 
         userChoice(studentInfo);
@@ -56,8 +56,10 @@ public class studentMain {
                     break;
                 case "-e":
                     System.out.println("Exiting Program!");
+                    break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Invalid input! Please try again");
+                    break;
             }
             System.out.println();
         } while (!choice.toLowerCase().equals("-e"));
@@ -118,7 +120,7 @@ public class studentMain {
     public static int linearSearch(Vector<studentClass> vector, String search) {
         int index = -1;
         for (int i = 0; i < vector.size(); i++) {
-            if (search == vector.elementAt(i).getFirstName()) {
+            if (search.toLowerCase().trim().equals(vector.elementAt(i).getFirstName().toLowerCase().trim())) {
                 index = i;
             }
         }
