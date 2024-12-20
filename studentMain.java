@@ -24,30 +24,68 @@ public class studentMain {
             studentInfo.addElement(new studentClass(studentToken.nextToken().trim(), studentToken.nextToken().trim(), studentToken.nextToken().trim()));
         }
 
-        userChoice(studentInfo);
+        userChoice();
     }
 
-    public static void userChoice(Vector<studentClass> vector) {
+    public static Vector<studentClass> fileReading(String fileName) throws IOException{
+        File f = new File(fileName);
+        Scanner readFile = new Scanner(f);
+
+        for (int i = 0; i < 7; i++) {
+            readFile.nextLine();
+        }
+
+        Vector<studentClass> studentInfo = new Vector<studentClass>();
+
+        while (readFile.hasNextLine()) {
+            String dataLine = readFile.nextLine();
+            StringTokenizer studentToken = new StringTokenizer(dataLine.trim(), ",");
+            studentToken.nextToken();
+            studentInfo.addElement(new studentClass(studentToken.nextToken().trim(), studentToken.nextToken().trim(), studentToken.nextToken().trim()));
+        }
+
+        return studentInfo;
+    }
+
+    public static void userChoice() throws IOException{
+        
         Scanner input = new Scanner(System.in);
+        Vector<String> temp = new Vector<String>();
         String choice = "";
+        String fileName = "";
         do {
             System.out.println("What would you like to do with list of student's names? \n 1. Input -n to sort Students by their ID \n 2. Input -f to sort Students by their first name \n 3. Input -l to sort Students by their last name \n 4. Input -s to Search a Student's Information by their first name \n 5. -e to Exit the Program");
             choice = input.nextLine();
     
             switch (choice.toLowerCase()) {
                 case "-n":
-                    bubbleSort(vector, 1);
+                    System.out.println("Please input file: ");
+                    fileName = input.nextLine();
+                    for (int i = 0; i < fileReading(fileName).size(); i++) {
+                        temp.add(fileReading(fileName).elementAt(i).getSID());
+                    }
+                    bubbleSort(fileReading(fileName), temp);
                     break;
                 case "-f":
-                    bubbleSort(vector, 2);
+                    System.out.println("Please input file: ");
+                    fileName = input.nextLine();
+                    for (int i = 0; i < fileReading(fileName).size(); i++) {
+                        temp.add(fileReading(fileName).elementAt(i).getFirstName());
+                    }
+                    bubbleSort(fileReading(fileName), temp);
                     break;
                 case "-l":
-                    bubbleSort(vector, 3);
+                    System.out.println("Please input file: ");
+                    fileName = input.nextLine();
+                    for (int i = 0; i < fileReading(fileName).size(); i++) {
+                        temp.add(fileReading(fileName).elementAt(i).getLastName());
+                    }
+                    bubbleSort(fileReading(fileName), temp);
                     break;
                 case "-s":
                     System.out.println("Please input the first name you want to search");
                     String searchFN = input.nextLine();
-                    int searchResult = linearSearch(vector, searchFN);
+                    int searchResult = linearSearch(fileReading(fileName), searchFN);
                     if (searchResult != -1) {
                         System.out.println("The name " + searchFN + " was found at index " + searchResult);
                     } else {
@@ -65,28 +103,7 @@ public class studentMain {
         } while (!choice.toLowerCase().equals("-e"));
     }
 
-    public static void bubbleSort(Vector<studentClass> vector, int type) {
-        Vector<String> temp = new Vector<String>();
-
-        switch (type) {
-            case 1:
-                for (int i = 0; i < vector.size(); i++) {
-                    temp.add(vector.elementAt(i).getSID());
-                }
-                break;
-            case 2:
-                for (int i = 0; i < vector.size(); i++) {
-                    temp.add(vector.elementAt(i).getFirstName());
-                }
-                break;
-            case 3:
-                for (int i = 0; i < vector.size(); i++) {
-                    temp.add(vector.elementAt(i).getLastName());
-                }
-                break;
-            default:
-                throw new AssertionError();
-        }
+    public static void bubbleSort(Vector<studentClass> vector, Vector<String> temp) {
 
         int boundary = temp.size() - 1;
         boolean sorted = false;
