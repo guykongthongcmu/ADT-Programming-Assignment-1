@@ -9,6 +9,8 @@ What would you like to do with list of student's names?
  4. Input -s to Search a Student's Information by their first name 
  5. -e to Exit the Program
 -n
+Please input file:
+class_roaster67.csv
 622115040 SUCHANUN  SIRIJANYA
 662115007 CHONCHANUN  KHACHONPHURITHANAKUL
 662115016 NATTHAPHUM  CHAIKHAN
@@ -53,6 +55,8 @@ What would you like to do with list of student's names?
  4. Input -s to Search a Student's Information by their first name 
  5. -e to Exit the Program
 -f
+Please input file:
+class_roaster67.csv
 672115049 ANAWAT  JANDEE
 672115007 CHANCHAKORN  JULLAPECH
 672115006 CHANLACHAT  PANYOYAI
@@ -97,6 +101,8 @@ What would you like to do with list of student's names?
  4. Input -s to Search a Student's Information by their first name 
  5. -e to Exit the Program
 -l
+Please input file:
+class_roaster67.csv
 672115044 VIDCHAYADA  ABHICHARTTIBUTRA
 672115039 METAVEE  AEINJANG
 672115041 RAPHEEPHAT  AEIPHINGCHAI
@@ -141,6 +147,8 @@ What would you like to do with list of student's names?
  4. Input -s to Search a Student's Information by their first name 
  5. -e to Exit the Program
 -s
+Please input file:
+class_roaster67.csv
 Please input the first name you want to search
 virawit
 The name virawit was found at index 30
@@ -153,6 +161,8 @@ What would you like to do with list of student's names?
  4. Input -s to Search a Student's Information by their first name 
  5. -e to Exit the Program
 -s
+Please input file:
+class_roaster67.csv
 Please input the first name you want to search
 ANNA
 The name ANNA is either spelt incorrectly or not in the database
