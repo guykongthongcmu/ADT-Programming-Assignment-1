@@ -8,22 +8,6 @@ import java.util.Vector;
 
 public class studentMain {
     public static void main(String[] args) throws IOException{
-        File f = new File("/Users/guykongthong/Desktop/cmu work/year1term2/adt/programming assignment/assignment 1/class_roaster67.csv");
-        Scanner readFile = new Scanner(f);
-
-        for (int i = 0; i < 7; i++) {
-            readFile.nextLine();
-        }
-
-        Vector<studentClass> studentInfo = new Vector<studentClass>();
-
-        while (readFile.hasNextLine()) {
-            String dataLine = readFile.nextLine();
-            StringTokenizer studentToken = new StringTokenizer(dataLine.trim(), ",");
-            studentToken.nextToken();
-            studentInfo.addElement(new studentClass(studentToken.nextToken().trim(), studentToken.nextToken().trim(), studentToken.nextToken().trim()));
-        }
-
         userChoice();
     }
 
