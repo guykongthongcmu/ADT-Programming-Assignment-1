@@ -40,13 +40,14 @@ public class studentMain {
         String fileName = "";
         String searchFN = "";
 
-
         userInput = input.nextLine();
         StringTokenizer userInputs = new StringTokenizer(userInput.trim(), " ");
-        fileName = userInputs.nextToken();
         choice = userInputs.nextToken();
         if (choice.equals("-s")) {
             searchFN = userInputs.nextToken();
+            fileName = userInputs.nextToken();
+        } else {
+            fileName = userInputs.nextToken();
         }
 
         switch (choice.toLowerCase()) {
