@@ -5,15 +5,15 @@
 
 Can input full command at once
 
-ex. class_roaster67.csv -f (ENTER)
+ex. -f class_roaster67.csv (ENTER)
 
-not class_roaster67.csv (ENTER) -f (ENTER)
+not -f (ENTER) class_roaster67.csv (ENTER)
 
 //
 
 Outputs from program:
 
-Input: class_roaster67.csv -n
+Input: -n class_roaster67.csv
 
 622115040 SUCHANUN SIRIJANYA
 662115007 CHONCHANUN KHACHONPHURITHANAKUL
@@ -51,7 +51,7 @@ Input: class_roaster67.csv -n
 672115048 SUKRITPONG WONGPANYA
 672115049 ANAWAT JANDEE
 
-Input: class_roaster67.csv -f 
+Input: -f class_roaster67.csv 
 
 672115049 ANAWAT JANDEE
 672115007 CHANCHAKORN JULLAPECH
@@ -89,7 +89,7 @@ Input: class_roaster67.csv -f
 672115045 VIRAWIT KONGTHONG
 672115043 WASINPAT YANIN
 
-Input: class_roaster67.csv -l
+Input: -l class_roaster67.csv
 
 672115044 VIDCHAYADA ABHICHARTTIBUTRA
 672115039 METAVEE AEINJANG
@@ -127,6 +127,6 @@ Input: class_roaster67.csv -l
 672115048 SUKRITPONG WONGPANYA
 672115043 WASINPAT YANIN
 
-Input: class_roaster67.csv -s VIRAWIT
+Input: -s VIRAWIT class_roaster67.csv
 
 The name VIRAWIT was found at index 30
