@@ -1,6 +1,16 @@
 # ADT Programming Assignment 1
 # 672115045 Virawit Kongthong
 
+//
+
+Can input full command at once
+
+ex. class_roaster67.csv -f (ENTER)
+
+not class_roaster67.csv (ENTER) -f (ENTER)
+
+//
+
 Outputs from program:
 
 Input: class_roaster67.csv -n
